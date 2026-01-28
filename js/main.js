@@ -1,58 +1,3 @@
-function updateDashboard() {
-  const occupiedRoomsEl = document.getElementById("occupiedRooms");
-  const recentCheckInEl = document.getElementById("recentCheckIn");
-  const recentCheckOutEl = document.getElementById("recentCheckOut")
-  if (occupiedRoomsEl || recentCheckInEl || recentCheckOutEl) {
-    let customerInfor;
-    customerInfor = localStorage.getItem("customerInfor") == null
-      ? []
-      : JSON.parse(localStorage.getItem("customerInfor"));
-    const currentCustomerCount = customerInfor.length;
-    if (occupiedRoomsEl) occupiedRoomsEl.textContent = currentCustomerCount;
-    if (recentCheckInEl) {
-      let totalAdditions = localStorage.getItem("totalAdditions");
-      totalAdditions = totalAdditions === null
-        ? currentCustomerCount
-        : parseInt(totalAdditions);
-      recentCheckInEl.textContent = totalAdditions;
-    }
-    if (recentCheckOutEl) {
-      let totalDeletions = localStorage.getItem("totalDeletions");
-      totalDeletions = totalDeletions === null
-        ? 0
-        : parseInt(totalDeletions);
-      recentCheckOutEl.textContent = totalDeletions;
-    }
-  }
-}
-function validateForm() {
-  const customerName = document.getElementById("name").value.trim();
-  const customerEmail = document.getElementById("email").value.trim();
-  const customerPhone = document.getElementById("phone").value.trim();
-  const customerFloor = document.getElementById("floor").value.trim();
-  const customerRoom = document.getElementById("room").value.trim();
-  if ([customerName, customerEmail, customerPhone, customerFloor, customerRoom].some((item) => item === "")) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "All fields are required",
-    });
-    return false;
-  }
-
-  // Check email
-  if (!customerEmail.includes("@")) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Invalid email address",
-    });
-    return false;
-  }
-
-  return true;
-}
-
 function showData() {
   customerInfor = localStorage.getItem("customerInfor") == null
     ? []
@@ -96,6 +41,60 @@ function showData() {
 
   // Update dashboard numbers
   updateDashboard();
+}
+function validateForm() {
+  const customerName = document.getElementById("name").value.trim();
+  const customerEmail = document.getElementById("email").value.trim();
+  const customerPhone = document.getElementById("phone").value.trim();
+  const customerFloor = document.getElementById("floor").value.trim();
+  const customerRoom = document.getElementById("room").value.trim();
+  if ([customerName, customerEmail, customerPhone, customerFloor, customerRoom].some((item) => item === "")) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "All fields are required",
+    });
+    return false;
+  }
+
+  // Check email
+  if (!customerEmail.includes("@")) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Invalid email address",
+    });
+    return false;
+  }
+
+  return true;
+}
+function updateDashboard() {
+  const occupiedRoomsEl = document.getElementById("occupiedRooms");
+  const recentCheckInEl = document.getElementById("recentCheckIn");
+  const recentCheckOutEl = document.getElementById("recentCheckOut")
+  if (occupiedRoomsEl || recentCheckInEl || recentCheckOutEl) {
+    let customerInfor;
+    customerInfor = localStorage.getItem("customerInfor") == null
+      ? []
+      : JSON.parse(localStorage.getItem("customerInfor"));
+    const currentCustomerCount = customerInfor.length;
+    if (occupiedRoomsEl) occupiedRoomsEl.textContent = currentCustomerCount;
+    if (recentCheckInEl) {
+      let totalAdditions = localStorage.getItem("totalAdditions");
+      totalAdditions = totalAdditions === null
+        ? currentCustomerCount
+        : parseInt(totalAdditions);
+      recentCheckInEl.textContent = totalAdditions;
+    }
+    if (recentCheckOutEl) {
+      let totalDeletions = localStorage.getItem("totalDeletions");
+      totalDeletions = totalDeletions === null
+        ? 0
+        : parseInt(totalDeletions);
+      recentCheckOutEl.textContent = totalDeletions;
+    }
+  }
 }
 function updateCardView(customerInfor) {
   const cardContainer = document.getElementById("cardContainer");
@@ -229,15 +228,6 @@ function deleteCustomer(adminDelete) {
     timer: 2000,
     timerProgressBar: true
   });
-}
-function empty() {
-  ["name", "email", "phone", "floor", "room"].forEach(
-    (inputId) => {
-      const element = document.getElementById(inputId);
-      if (element) element.value = "";
-    }
-  );
-  return true;
 }
 function updateCustomer(customerUpdate) {
   const submitBtn = document.getElementById("submitBtn");
@@ -380,6 +370,15 @@ function clearAll() {
       }
     });
   }
+}
+function empty() {
+  ["name", "email", "phone", "floor", "room"].forEach(
+    (inputId) => {
+      const element = document.getElementById(inputId);
+      if (element) element.value = "";
+    }
+  );
+  return true;
 }
 document.addEventListener("DOMContentLoaded", function () {
   let customerInfor;
