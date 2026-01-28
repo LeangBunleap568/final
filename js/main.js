@@ -26,11 +26,11 @@ function updateDashboard() {
   }
 }
 function validateForm() {
-  const customerName = document.getElementById("name");
-  const customerEmail = document.getElementById("email");
-  const customerPhone = document.getElementById("phone");
-  const customerFloor = document.getElementById("floor");
-  const customerRoom = document.getElementById("room");
+  const customerName = document.getElementById("name").value.trim();
+  const customerEmail = document.getElementById("email").value.trim();
+  const customerPhone = document.getElementById("phone").value.trim();
+  const customerFloor = document.getElementById("floor").value.trim();
+  const customerRoom = document.getElementById("room").value.trim();
   if ([customerName, customerEmail, customerPhone, customerFloor, customerRoom].some((item) => item === "")) {
     Swal.fire({
       icon: "error",
@@ -38,7 +38,10 @@ function validateForm() {
       text: "All fields are required",
     });
     return false;
-  } else if (!customerEmail.includes("@")) {
+  }
+
+  // Check email
+  if (!customerEmail.includes("@")) {
     Swal.fire({
       icon: "error",
       title: "Oops...",
@@ -46,8 +49,10 @@ function validateForm() {
     });
     return false;
   }
+
   return true;
 }
+
 function showData() {
   customerInfor = localStorage.getItem("customerInfor") == null
     ? []
