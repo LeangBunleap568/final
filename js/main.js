@@ -31,6 +31,7 @@ function validateForm() {
   const customerPhone = document.getElementById("phone").value.trim();
   const customerFloor = document.getElementById("floor").value.trim();
   const customerRoom = document.getElementById("room").value.trim();
+  console.log(customerName, customerEmail, customerPhone, customerFloor, customerRoom);
   if ([customerName, customerEmail, customerPhone, customerFloor, customerRoom].some((item) => item === "")) {
     Swal.fire({
       icon: "error",
