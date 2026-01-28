@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/login.css" />
+    <!-- <link rel="stylesheet" href="index.js"> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-card">
+        <!-- Header -->
+        <div class="header">
+          <h2>Room Management System</h2>
+          <p>Welcome back! Sign in to your account</p>
+        </div>
+
+        <!-- User Icon -->
+        <div class="user-icon">
+          <i class="fa-solid fa-user-circle"></i>
+        </div>
+
+        <!-- Form -->
+        <form class="form" id="form">
+          <div class="field">
+            <input
+              type="text"
+              placeholder="Email or Phone Number"
+              id="username"
+            />
+          </div>
+
+          <div class="field password-field">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              id="password"
+            />
+            <i class="fa-regular fa-eye" id="toggle"></i>
+          </div>
+          <h2 id="erorr"></h2>
+
+          <button
+            type="submit"
+            href="dashboard.html"
+            class="login-btn"
+            id="login"
+          >
+            Login
+          </button>
+        </form>
+        <div class="forgot-password">
+          <a href="forgot.html" id="forgot-password">Forgot Password?</a>
+      </div>
+    </div>
+  </body>
+  <script src="js/index.js"></script>
+</html>

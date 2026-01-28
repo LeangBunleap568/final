@@ -1,0 +1,75 @@
+<div class="card-header">
+          <div class="guest-info">
+            <div class="guest-name-section">
+              <div class="guest-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="guest-details">
+                <h2>Leang Bunleap</h2>
+                <span class="guest-status">Checked In</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Information Grid -->
+          <div class="room-info-grid">
+            <div class="room-item">
+              <i class="fas fa-layer-group"></i>
+              <span>Floor: 5</span>
+            </div>
+            <div class="room-item">
+              <i class="fas fa-door-open"></i>
+              <span>Room: 507</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stay Duration Section -->
+        <div class="stay-section">
+          <div class="stay-details">
+            <div class="stay-item">
+              <div class="stay-label">Check-In</div>
+              <div class="stay-value">15 Mar, 2024</div>
+            </div>
+            <div class="stay-item">
+              <div class="stay-label">Check-Out</div>
+              <div class="stay-value">18 Mar, 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="contact-section">
+          <div class="contact-header">
+            <i class="fas fa-address-book"></i>
+            Contact Information
+          </div>
+
+          <div class="contact-grid">
+            <!-- Email -->
+            <div class="contact-item email">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <div class="contact-label">Email Address</div>
+                <div class="contact-value">
+                  Leangbunleap00@gmail.com
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-item phone">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <div class="contact-label">Phone Number</div>
+                <div class="contact-value">+855 69 543 828</div>
+              </div>
+            </div>
+
+            <!-- Address -->
+          </div>
+        </div>
